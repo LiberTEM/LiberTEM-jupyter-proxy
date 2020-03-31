@@ -9,4 +9,6 @@
 .jupyter
 .bash_logout
 .profile
+*.pyc
 dask-worker-space
+.ipynb_checkpoints/
