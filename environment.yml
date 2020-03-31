@@ -1,6 +1,0 @@
-channels:
-  - conda-forge
-dependencies:
-  - numpy
-  - jupyter-server-proxy
-  - code-server

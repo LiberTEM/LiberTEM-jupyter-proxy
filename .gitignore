@@ -9,3 +9,4 @@
 .jupyter
 .bash_logout
 .profile
+dask-worker-space

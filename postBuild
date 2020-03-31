@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Enable the proxy extension in notebook and lab
 jupyter serverextension enable --py jupyter_server_proxy
 jupyter labextension install @jupyterlab/server-proxy
 jupyter lab build
 
-code-server --install-extension ms-python.python
-
-# Install the VS code proxy
 pip install -e.

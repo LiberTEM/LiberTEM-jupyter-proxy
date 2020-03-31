@@ -6,26 +6,25 @@ with open("README.md", encoding="utf8") as f:
 
 
 setuptools.setup(
-    name="jupyter-vscode-proxy",
+    name="libertem-jupyter-proxy",
     version="0.1",
-    url="https://github.com/betatim/vscode-binder",
-    author="Tim Head",
+    url="",
+    author="",
     license="BSD",
-    description="VS Code extension for Jupyter",
+    description="Run LiberTEM in JupyterLab",
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
-    keywords=["Jupyter", "vscode", "vs code", "editor"],
+    keywords=["Jupyter"],
     classifiers=["Framework :: Jupyter"],
     install_requires=[
-        'jupyter-server-proxy'
+        'jupyter-server-proxy',
+        'libertem',
+        'jupyterlab<2',
     ],
     entry_points={
-        "jupyter_serverproxy_servers": ["vscode = jupyter_vscode_proxy:setup_vscode",]
+        "jupyter_serverproxy_servers": ["libertem = jupyter_libertem_proxy:setup_libertem",]
     },
-    package_data={"jupyter_vscode_proxy": ["icons/*"]},
-    project_urls={
-        "Source": "https://github.com/betatim/vscode-binder/",
-        "Tracker": "https://github.com/betatim/vscode-binder/issues",
-    },
+    package_data={"jupyter_libertem_proxy": ["icons/*"]},
+    project_urls={},
 )
