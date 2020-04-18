@@ -9,11 +9,13 @@
 2. Install dependencies and LiberTEM master:
 
     $ pip install -e .
+    
     $ pip install -e "git+https://github.com/liberTEM/LiberTEM/#egg=libertem"
 
 3. Enable and install server-proxy extension:
 
     $ jupyter serverextension enable --py jupyter_server_proxy
+    
     $ jupyter labextension install @jupyterlab/server-proxy
 
 3. Start jupyter-lab
