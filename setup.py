@@ -20,7 +20,7 @@ setuptools.setup(
     install_requires=[
         'jupyter-server-proxy',
         'libertem',
-        'jupyterlab<2',
+        'jupyterlab',
     ],
     entry_points={
         "jupyter_serverproxy_servers": ["libertem = jupyter_libertem_proxy:setup_libertem",]
