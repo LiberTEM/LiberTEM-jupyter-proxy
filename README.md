@@ -1,4 +1,4 @@
-# Run LiberTEM in JupyterLab
+# Run the LiberTEM GUI in JupyterLab / JupyterHub
 
 ## Install locally
 
@@ -12,9 +12,16 @@
     
     $ pip install -e "git+https://github.com/liberTEM/LiberTEM/#egg=libertem"
 
-3. Start jupyter-lab
+3. Start jupyter-lab or jupyter-notebook
 
     $ jupyter-lab
+
+or
+
+    $ jupyter notebook
+
+Now LiberTEM should be available as an icon in JupyterLab, or in the
+"New" dropdown in the classical notebook interface / JupyterHub.
 
 ## Try it (WIP)
 
