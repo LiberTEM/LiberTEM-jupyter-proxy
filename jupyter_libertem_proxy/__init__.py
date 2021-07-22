@@ -19,6 +19,7 @@ def setup_libertem():
     return {
         "command": _get_libertem_cmd,
         "timeout": 20,
+        "new_browser_tab": True,
         "launcher_entry": {
             "title": "LiberTEM",
             "icon_path": os.path.join(
