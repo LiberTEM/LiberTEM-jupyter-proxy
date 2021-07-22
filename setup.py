@@ -19,8 +19,6 @@ setuptools.setup(
     classifiers=["Framework :: Jupyter"],
     install_requires=[
         'jupyter-server-proxy',
-        'libertem',
-        'jupyterlab',
     ],
     entry_points={
         "jupyter_serverproxy_servers": ["libertem = jupyter_libertem_proxy:setup_libertem",]
