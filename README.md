@@ -26,7 +26,7 @@ Now LiberTEM should be available as an icon in JupyterLab, or in the
 ## Deployment notes
 
 When deploying behind a nginx reverse proxy, make sure websocket requests are
-proxied for all URLs, not just for specifically matching ones (otherwise, something
+proxied for all URLs, not just for specifically matching ones. Otherwise, something
 like connecting to `wss://<hostname>/user/<username>/libertem/events/` will fail
 with 400 bad request, as `Upgrade: websocket` is not supported.
 
