@@ -23,6 +23,13 @@ or
 Now LiberTEM should be available as an icon in JupyterLab, or in the
 "New" dropdown in the classical notebook interface / JupyterHub.
 
+## Deployment notes
+
+When deploying behind a nginx reverse proxy, make sure websocket requests are
+proxied for all URLs, not just for specifically matching ones (otherwise, something
+like connecting to `wss://<hostname>/user/<username>/libertem/events/` will fail
+with 400 bad request, as `Upgrade: websocket` is not supported.
+
 ## Try it (WIP)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sk1p/libertem-jupyter-proxy/master?urlpath=lab)
