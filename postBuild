@@ -1,9 +1,9 @@
 #!/bin/bash
 
-jupyter serverextension enable --py jupyter_server_proxy
-jupyter labextension install @jupyterlab/server-proxy
-jupyter lab build
+# jupyter serverextension enable --py jupyter_server_proxy
+# jupyter labextension install @jupyterlab/server-proxy
+# jupyter lab build
 
-pip install -e.
+pip install -e .
 
 pip install -e "git+https://github.com/liberTEM/LiberTEM/#egg=libertem"
