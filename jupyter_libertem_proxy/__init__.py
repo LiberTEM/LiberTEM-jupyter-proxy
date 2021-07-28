@@ -32,7 +32,6 @@ def _get_libertem_cmd(port):
     return cmd
 
 
-
 def setup_libertem():
     return {
         "command": _get_libertem_cmd,

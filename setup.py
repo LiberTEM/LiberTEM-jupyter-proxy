@@ -21,7 +21,9 @@ setuptools.setup(
         'jupyter-server-proxy',
     ],
     entry_points={
-        "jupyter_serverproxy_servers": ["libertem = jupyter_libertem_proxy:setup_libertem",]
+        "jupyter_serverproxy_servers": [
+            "libertem = jupyter_libertem_proxy:setup_libertem",
+        ]
     },
     package_data={"jupyter_libertem_proxy": ["icons/*"]},
     project_urls={},
