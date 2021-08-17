@@ -5,7 +5,7 @@ import shutil
 
 
 def _get_libertem_path():
-    config_path = os.path.join(sys.prefix, "etc", "jupyter_libertem_proxy.json")
+    config_path = os.path.join(sys.prefix, "etc", "libertem_jupyter_proxy.json")
     if os.path.exists(config_path):
         with open(config_path, "r") as f:
             config = json.loads(f.read())
