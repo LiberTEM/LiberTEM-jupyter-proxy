@@ -8,10 +8,10 @@ with open("README.md", encoding="utf8") as f:
 setuptools.setup(
     name="libertem-jupyter-proxy",
     version="0.1",
-    url="",
+    url="https://github.com/LiberTEM/LiberTEM-jupyter-proxy",
     author="",
     license="BSD",
-    description="Run LiberTEM in JupyterLab",
+    description="Run LiberTEM via JupyterLab/JupyterHub",
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
