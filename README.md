@@ -1,10 +1,12 @@
 # Run the LiberTEM GUI in JupyterLab / JupyterHub
 
-## Install locally
+See [the LiberTEM docs](https://libertem.github.io/LiberTEM/jupyter.html) for details.
+
+## Install
 
 1. Clone this repo
 
-    $ git clone https://github.com/sk1p/libertem-jupyter-proxy
+    $ git clone https://github.com/LiberTEM/LiberTEM-jupyter-proxy
 
 2. Install dependencies and LiberTEM master:
 
@@ -25,14 +27,14 @@ Now LiberTEM should be available as an icon in JupyterLab, or in the
 
 ## Deployment notes
 
-When deploying behind a nginx reverse proxy, make sure websocket requests are
+When deploying behind a reverse proxy, make sure websocket requests are
 proxied for all URLs, not just for specifically matching ones. Otherwise, something
 like connecting to `wss://<hostname>/user/<username>/libertem/events/` will fail
 with 400 bad request, as `Upgrade: websocket` is not supported.
 
 ## Try it (WIP)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sk1p/libertem-jupyter-proxy/master?urlpath=lab)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LiberTEM/LiberTEM-jupyter-proxy/master?urlpath=lab)
 
 ## Thanks
 
