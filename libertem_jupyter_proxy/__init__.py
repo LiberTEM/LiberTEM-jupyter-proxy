@@ -3,7 +3,12 @@ import sys
 import json
 import shutil
 import secrets
+import logging
 from tempfile import mkdtemp
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel('INFO')
 
 
 def _get_libertem_path():
@@ -19,7 +24,7 @@ def _get_libertem_path():
     if shutil.which(executable):
         return executable
 
-    raise FileNotFoundError("Can not find libertem-server in configuration or PATH")
+    raise FileNotFoundError("Could not find libertem-server in configuration or PATH")
 
 
 def make_get_libertem_cmd(token_path):
@@ -32,6 +37,8 @@ def make_get_libertem_cmd(token_path):
             "--port=" + str(port),
             "--token-path=" + str(token_path),
         ]
+
+        logger.info('LiberTEM command: %s', ' '.join(cmd))
 
         return cmd
     return _get_libertem_cmd
@@ -62,7 +69,7 @@ def setup_libertem():
 
     return {
         "command": make_get_libertem_cmd(token_path),
-        "timeout": 20,
+        "timeout": 90,
         "request_headers_override": {
             "X-Api-Key": token,
         },
