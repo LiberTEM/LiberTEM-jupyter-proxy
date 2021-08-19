@@ -25,6 +25,6 @@ setuptools.setup(
             "libertem = libertem_jupyter_proxy:setup_libertem",
         ]
     },
-    package_data={"libertem_jupyter_proxy": ["icons/*"]},
+    package_data={"libertem_jupyter_proxy": ["icons/*", "share/*"]},
     project_urls={},
 )
