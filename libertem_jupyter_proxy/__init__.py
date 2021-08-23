@@ -12,19 +12,33 @@ logger.setLevel('INFO')
 
 
 def _get_libertem_path():
-    config_path = os.path.join(sys.prefix, "etc", "libertem_jupyter_proxy.json")
+    """
+    Gets the path to libertem-server or a wrapper script from config files:
+
+    - {LIBERTEM_ROOT}/etc/libertem_jupyter_proxy.json
+    - {sys.prefix}/etc/libertem_jupyter_proxy.json
+
+    If no config is found, looks up 'libertem-server' in the $PATH.
+    """
+    prefix = os.environ.get("LIBERTEM_ROOT", sys.prefix)
+    config_path = os.path.join(prefix, "etc", "libertem_jupyter_proxy.json")
+    path = None
+
+    # first, look up path in config:
     if os.path.exists(config_path):
         with open(config_path, "r") as f:
             config = json.loads(f.read())
         path = config.get('libertem_server_path')
-        if path is not None:
-            return path
 
-    executable = "libertem-server"
-    if shutil.which(executable):
-        return executable
+    # if there is no config, or the config doesn't contain the key,
+    # check $PATH:
+    if path is None:
+        path = shutil.which("libertem-server")
 
-    raise FileNotFoundError("Could not find libertem-server in configuration or PATH")
+    if path is None:
+        raise FileNotFoundError("Could not find libertem-server in configuration or PATH")
+
+    return path
 
 
 def make_get_libertem_cmd(token_path):
