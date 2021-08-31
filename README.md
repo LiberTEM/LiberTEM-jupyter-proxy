@@ -6,7 +6,7 @@ See [the LiberTEM docs](https://libertem.github.io/LiberTEM/jupyter.html) for mo
 - Python 3.6+
 - Jupyter Notebook 6.0+
 - JupyterLab 2.1+
-- LiberTEM 0.8.0+ (currently requires unreleased changes only available in the master branch!)
+- LiberTEM 0.8.0+
 
 ## LiberTEM
 [LiberTEM](https://libertem.github.io/LiberTEM/index.html) is an open source platform for high-throughput distributed processing of large-scale binary data sets and live data streams using a modified MapReduce programming model.
@@ -15,20 +15,18 @@ The current focus is pixelated scanning transmission electron microscopy (STEM) 
 
 ## Install
 
-i. Install this package and LiberTEM master:
+1. Install this package and LiberTEM:
 
-    $ pip install libertem-jupyter-proxy
-    
-    $ pip install -e "git+https://github.com/liberTEM/LiberTEM/#egg=libertem"
+    $ pip install libertem-jupyter-proxy libertem
 
-3. enable `jupyter-server-proxy` extension
+2. enable `jupyter-server-proxy` extension
 
 For Jupyter Classic, activate the jupyter-server-proxy extension:
 ```
 jupyter serverextension enable --sys-prefix jupyter_server_proxy
 ```
 
-For Jupyter Lab, install the @jupyterlab/server-proxy extension:
+For JupyterLab, install the @jupyterlab/server-proxy extension:
 ```
 jupyter labextension install @jupyterlab/server-proxy
 jupyter lab build
@@ -59,9 +57,9 @@ If you want to customize the startup of LiberTEM, you can drop a JSON file into
 {"libertem_server_path": "/path/to/a/venv/bin/libertem-server"}
 ```
 
-One use case is to install LiberTEM itself into a different Python environment
-than Jupyter, as in the example above. Another is to write a wrapper script
-to customize the environment setup, as in the example script
+This allows to install LiberTEM itself into a different Python environment
+than Jupyter, as opposed to using the same environment as in the example above.
+It can also allow to write a wrapper script to customize the environment setup, as in the example script
 `libertem_jupyter_proxy/share/launch_juwels.sh`
 
 Without configuration, `libertem-server` is expected to be found in `$PATH`.
