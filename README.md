@@ -15,13 +15,9 @@ The current focus is pixelated scanning transmission electron microscopy (STEM) 
 
 ## Install
 
-1. Clone this repo
+i. Install this package and LiberTEM master:
 
-    $ git clone https://github.com/LiberTEM/LiberTEM-jupyter-proxy
-
-2. Install dependencies and LiberTEM master:
-
-    $ pip install -e .
+    $ pip install libertem-jupyter-proxy
     
     $ pip install -e "git+https://github.com/liberTEM/LiberTEM/#egg=libertem"
 
