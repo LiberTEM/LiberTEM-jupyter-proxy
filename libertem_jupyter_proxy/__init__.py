@@ -41,8 +41,9 @@ def _get_libertem_path():
     return path
 
 
-def make_get_libertem_cmd(token_path):
+def make_get_libertem_cmd(token):
     def _get_libertem_cmd(port):
+        token_path = store_token(token)
         path = _get_libertem_path()
 
         cmd = [
@@ -79,10 +80,9 @@ def store_token(token):
 
 def setup_libertem():
     token = make_token()
-    token_path = store_token(token)
 
     return {
-        "command": make_get_libertem_cmd(token_path),
+        "command": make_get_libertem_cmd(token),
         "timeout": 90,
         "request_headers_override": {
             "X-Api-Key": token,
