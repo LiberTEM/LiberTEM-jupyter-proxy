@@ -7,7 +7,7 @@ with open("README.md", encoding="utf8") as f:
 
 setuptools.setup(
     name="libertem-jupyter-proxy",
-    version="0.1.1",
+    version="0.1.2",
     url="https://github.com/LiberTEM/LiberTEM-jupyter-proxy",
     author="",
     license="BSD",
